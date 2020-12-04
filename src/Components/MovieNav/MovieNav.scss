@@ -1,0 +1,20 @@
+@import '../../styles/color.scss';
+.Information {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  width: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: auto;
+  margin-top: 30px;
+}
+.Information__link {
+  color: $main-color;
+  font-size: 24px;
+}
+
+.Information__active {
+  color: $text-color;
+}

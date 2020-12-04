@@ -1,0 +1,30 @@
+@import '../../styles/base.scss';
+.Movie__info {
+  display: flex;
+}
+.Movie__image {
+  width: 40%;
+}
+.Movie__details {
+  margin-left: 2%;
+  width: 58%;
+}
+.Movie__title {
+  text-align: center;
+  font-weight: 700;
+}
+
+.Movie__score {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.Movie__score--count {
+  color: rgb(133, 133, 133);
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.Movie__overview {
+  text-align: justify;
+}

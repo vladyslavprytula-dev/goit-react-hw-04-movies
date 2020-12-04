@@ -1,0 +1,31 @@
+@import '../../styles/color.scss';
+.Cast__list {
+  padding: 40px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 25px;
+}
+.Image {
+  width: 200px;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.Cast__images {
+  border-radius: 50%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.Cast__name {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.Cast__character {
+  font-size: 16px;
+  text-align: center;
+  font-weight: 600;
+}

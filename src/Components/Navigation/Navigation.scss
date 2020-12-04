@@ -1,0 +1,12 @@
+@import '../../styles/color.scss';
+
+.NavLink {
+  font-size: 28px;
+  color: $main-color;
+  font-weight: 600;
+  margin-left: 60px;
+}
+
+.NavLink--active {
+  color: $text-color;
+}
