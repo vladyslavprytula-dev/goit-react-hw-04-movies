@@ -1,18 +1,32 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import './MovieNav.scss';
-const MovieNav = ({ filmId }) => {
+const MovieNav = ({ filmId, location }) => {
   return (
     <>
       <ul className="Information">
         <li className="Information__link" activeclassname="Information__active">
-          <NavLink to={`/movie/${filmId}/cast`}>Cast</NavLink>
+          <NavLink
+            to={{
+              pathname: `/movie/${filmId}/cast`,
+              state: location.state,
+            }}
+          >
+            Cast
+          </NavLink>
         </li>
         <li className="Information__link" activeclassname="Information__active">
-          <NavLink to={`/movie/${filmId}/reviews`}>Reviews</NavLink>
+          <NavLink
+            to={{
+              pathname: `/movie/${filmId}/reviews`,
+              state: location.state,
+            }}
+          >
+            Reviews
+          </NavLink>
         </li>
       </ul>
     </>
   );
 };
-export default MovieNav;
+export default withRouter(MovieNav);

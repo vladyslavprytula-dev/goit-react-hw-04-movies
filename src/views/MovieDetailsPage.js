@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
+import routes from '../routes';
+import MovieBackButton from '../Components/MovieBackButton/MovieBackButton';
 import MovieDetails from '../Components/MovieDetails/MovieDetails';
 import MovieNav from '../Components/MovieNav/MovieNav';
 import { fetchMovieDetails } from '../Services/FetchFilms';
@@ -25,22 +27,24 @@ export default class MovieDetailsPage extends Component {
       .catch(error => this.setState({ error: error.message }))
       .finally(() => this.setState({ isLoading: false }));
   }
-
+  handleGoBack = () => {
+    const { location, history } = this.props;
+    history.push(location.state.from || routes.home);
+  };
   render() {
     const { film, isLoading, error } = this.state;
+    const { match } = this.props;
     return (
       <>
         {isLoading && <Loader />}
         {error && <Error text={error} />}
         {film ? (
           <>
+            <MovieBackButton handleGoBack={this.handleGoBack} />
             <MovieDetails film={film} />
             <MovieNav filmId={film.id} />
-            <Route path={`${this.props.match.path}/cast`} component={Cast} />
-            <Route
-              path={`${this.props.match.path}/reviews`}
-              component={Reviews}
-            />
+            <Route path={`${match.path}/cast`} component={Cast} />
+            <Route path={`${match.path}/reviews`} component={Reviews} />
           </>
         ) : (
           ''
