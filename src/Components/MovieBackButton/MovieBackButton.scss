@@ -1,0 +1,21 @@
+.BackButton {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+  border-radius: 4px;
+  color: #555555;
+  display: block;
+  width: 120px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+}
+.BackButton:hover,
+.BackButton:focus {
+  border-color: rgba(23, 138, 173, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset,
+    0 0 8px rgba(23, 138, 173, 0.6);
+  outline: 0 none;
+}

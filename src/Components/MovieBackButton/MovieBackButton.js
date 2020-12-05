@@ -1,6 +1,7 @@
 import React from 'react';
+import './MovieBackButton.scss';
 const MovieBackButton = ({ handleGoBack }) => (
-  <button type="button" onClick={handleGoBack}>
+  <button className="BackButton" type="button" onClick={handleGoBack}>
     Back
   </button>
 );
