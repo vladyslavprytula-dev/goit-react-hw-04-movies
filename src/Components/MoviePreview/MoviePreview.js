@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import defaultImg from '../../img/unnamed.png';
 import './MoviePreview.scss';
 
-const FilmsPreview = ({ poster_path, original_title, name }) => {
+const MoviePreview = ({ poster_path, original_title, name }) => {
   return (
     <div className="Films">
       <div className="FilmsPreview-thumb">
@@ -24,16 +24,16 @@ const FilmsPreview = ({ poster_path, original_title, name }) => {
   );
 };
 
-FilmsPreview.defaultProps = {
+MoviePreview.defaultProps = {
   poster_path: '',
   original_title: '',
   name: '',
 };
 
-FilmsPreview.propTypes = {
+MoviePreview.propTypes = {
   poster_path: PropTypes.string,
   original_title: PropTypes.string,
   name: PropTypes.string,
 };
 
-export default FilmsPreview;
+export default MoviePreview;

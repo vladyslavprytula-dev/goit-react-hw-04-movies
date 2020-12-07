@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import routes from '../routes';
 import MovieBackButton from '../Components/MovieBackButton/MovieBackButton';
 import MovieDetails from '../Components/MovieDetails/MovieDetails';
 import MovieNav from '../Components/MovieNav/MovieNav';
-import { fetchMovieDetails } from '../Services/FetchFilms';
 import Cast from './Cast';
 import Reviews from './Reviews';
 import Loader from '../Components/Loader/Loader';
 import Error from '../Components/Error/Error';
-
+import routes from '../routes';
+import { fetchMovieDetails } from '../Services/FetchFilms';
 export default class MovieDetailsPage extends Component {
   state = {
     film: null,
@@ -41,7 +40,7 @@ export default class MovieDetailsPage extends Component {
         {film ? (
           <>
             <MovieBackButton handleGoBack={this.handleGoBack} />
-            <MovieDetails film={film} />
+            <MovieDetails {...film} />
             <MovieNav filmId={film.id} />
             <Route path={`${match.path}/cast`} component={Cast} />
             <Route path={`${match.path}/reviews`} component={Reviews} />

@@ -1,37 +1,51 @@
 import React from 'react';
-import defaultImag from '../../img/unnamed.png';
+import PropTypes from 'prop-types';
 import './MovieDetails.scss';
-const MovieDetails = ({ film }) => {
+import defaultImag from '../../img/unnamed.png';
+const MovieDetails = ({
+  release_date,
+  original_title,
+  vote_average,
+  vote_count,
+  overview,
+  poster_path,
+}) => {
   let RealeseYear = null;
-  if (film.release_date) {
-    RealeseYear = new Date(film.release_date).getFullYear();
+  if (release_date) {
+    RealeseYear = new Date(release_date).getFullYear();
   }
   return (
-    <>
-      <div className="Movie__info">
-        <div className="Movie__image">
-          {film.poster_path ? (
-            <img
-              src={`https://image.tmdb.org/t/p/original${film.poster_path}`}
-              alt={film.original_title}
-            />
-          ) : (
-            <img src={defaultImag} alt={film.original_title} width="200" />
-          )}
-        </div>
-        <div className="Movie__details">
-          <h2 className="Movie__title">
-            {film.original_title} ({RealeseYear})
-          </h2>
-          <p className="Movie__score">
-            {`Raiting: ${film.vote_average}`}
-            <span className="Movie__score--count">{` (${film.vote_count} votes)`}</span>
-          </p>
-          <h3>Overview</h3>
-          <p className="Movie__overview">{film.overview}</p>
-        </div>
+    <div className="Movie__info">
+      <div className="Movie__image">
+        {poster_path ? (
+          <img
+            src={`https://image.tmdb.org/t/p/original${poster_path}`}
+            alt={original_title}
+          />
+        ) : (
+          <img src={defaultImag} alt={original_title} width="200" />
+        )}
       </div>
-    </>
+      <div className="Movie__details">
+        <h2 className="Movie__title">
+          {original_title} ({RealeseYear})
+        </h2>
+        <p className="Movie__score">
+          {`Raiting: ${vote_average}`}
+          <span className="Movie__score--count">{` (${vote_count} votes)`}</span>
+        </p>
+        <h3>Overview</h3>
+        <p className="Movie__overview">{overview}</p>
+      </div>
+    </div>
   );
+};
+MovieDetails.protoTypes = {
+  release_date: PropTypes.string.isRequired,
+  original_title: PropTypes.string.isRequired,
+  vote_average: PropTypes.number.isRequired,
+  vote_count: PropTypes.number.isRequired,
+  overview: PropTypes.string.isRequired,
+  poster_path: PropTypes.string,
 };
 export default MovieDetails;

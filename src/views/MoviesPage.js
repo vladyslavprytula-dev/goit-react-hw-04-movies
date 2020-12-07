@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Error from '../Components/Error/Error';
-import { fetchMoviesPage } from '../Services/FetchFilms';
 import MainLoader from '../Components/LoadMoreBtn/Button';
 import Button from '../Components/LoadMoreBtn/Button';
 import MoviesList from '../Components/MoviesList/MoviesList';
+import { fetchMoviesPage } from '../Services/FetchFilms';
 import '../styles/search.scss';
 
 class MoviesPage extends Component {
