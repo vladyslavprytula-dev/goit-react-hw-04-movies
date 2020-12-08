@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import MoviePreview from '../MoviePreview/MoviePreview';
 import './MovieList.scss';
-// import routes from '../../routes'
 const MoviesList = ({ films, location }) => {
   return (
     <ul className="Films__list">

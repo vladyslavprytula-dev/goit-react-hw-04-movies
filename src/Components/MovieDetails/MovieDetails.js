@@ -10,9 +10,9 @@ const MovieDetails = ({
   overview,
   poster_path,
 }) => {
-  let RealeseYear = null;
+  let realeseYear = null;
   if (release_date) {
-    RealeseYear = new Date(release_date).getFullYear();
+    realeseYear = new Date(release_date).getFullYear();
   }
   return (
     <div className="Movie__info">
@@ -28,7 +28,7 @@ const MovieDetails = ({
       </div>
       <div className="Movie__details">
         <h2 className="Movie__title">
-          {original_title} ({RealeseYear})
+          {original_title} ({realeseYear})
         </h2>
         <p className="Movie__score">
           {`Raiting: ${vote_average}`}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Review from '../Components/Review/Review';
 import NoReview from '../Components/NoReview/NoReview';
-import { fetchReviews } from '../Services/FetchFilms';
+import { fetchReviews } from '../services/fetchFilms';
 import '../styles/review.scss';
 export default class Cast extends Component {
   state = {

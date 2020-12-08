@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MoviesList from '../Components/MoviesList/MoviesList';
-import { fetchTrendingFilms } from '../Services/FetchFilms';
+import { fetchTrendingFilms } from '../services/fetchFilms';
 
 export default class HomePage extends Component {
   state = {
@@ -23,10 +23,6 @@ export default class HomePage extends Component {
 
   render() {
     const { films } = this.state;
-    return (
-      <>
-        <MoviesList films={films} />
-      </>
-    );
+    return <MoviesList films={films} />;
   }
 }

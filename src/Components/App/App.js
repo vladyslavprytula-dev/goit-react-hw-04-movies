@@ -26,7 +26,7 @@ const App = () => (
       <Suspense fallback={<Loader />}>
         <Switch>
           <Route path={routes.home} exact component={HomePage} />
-          <Route path={routes.MovieDetailsPage} component={MovieDetailsPage} />
+          <Route path={routes.movieDetailsPage} component={MovieDetailsPage} />
           <Route path={routes.movies} component={MoviesPage} />
           <Route component={Error} />
         </Switch>

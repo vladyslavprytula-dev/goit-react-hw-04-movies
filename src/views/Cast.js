@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CastList from '../Components/Cast/CastList';
 import Error from '../Components/Error/Error';
 import Loader from '../Components/Loader/Loader';
-import { fetchCastList } from '../Services/FetchFilms';
+import { fetchCastList } from '../services/fetchFilms';
 
 export default class Cast extends Component {
   state = {

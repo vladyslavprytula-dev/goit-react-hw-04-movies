@@ -1,8 +1,8 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default {
   home: '/',
-  movies: '/movie',
-  MovieDetailsPage: '/movie/:movieId',
-  Cast: '/movie/:movieId/cast',
-  Reviews: '/movie/:movieId/reviews',
+  movies: '/movies',
+  movieDetailsPage: '/movie/:movieId',
+  cast: '/movie/:movieId/cast',
+  reviews: '/movie/:movieId/reviews',
 };

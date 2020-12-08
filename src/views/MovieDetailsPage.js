@@ -8,7 +8,7 @@ import Reviews from './Reviews';
 import Loader from '../Components/Loader/Loader';
 import Error from '../Components/Error/Error';
 import routes from '../routes';
-import { fetchMovieDetails } from '../Services/FetchFilms';
+import { fetchMovieDetails } from '../services/fetchFilms';
 export default class MovieDetailsPage extends Component {
   state = {
     film: null,

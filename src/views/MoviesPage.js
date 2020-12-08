@@ -3,7 +3,7 @@ import Error from '../Components/Error/Error';
 import MainLoader from '../Components/LoadMoreBtn/Button';
 import Button from '../Components/LoadMoreBtn/Button';
 import MoviesList from '../Components/MoviesList/MoviesList';
-import { fetchMoviesPage } from '../Services/FetchFilms';
+import { fetchMoviesPage } from '../services/fetchFilms';
 import '../styles/search.scss';
 
 class MoviesPage extends Component {
@@ -65,7 +65,9 @@ class MoviesPage extends Component {
   handleSubmit = e => {
     e.preventDefault();
     this.onChangeValue(this.state.inputValue);
-    this.reset();
+    if (this.state.inputValue !== this.state.searchMovie) {
+      this.reset();
+    }
   };
 
   reset = () => {
