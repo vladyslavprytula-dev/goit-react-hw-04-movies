@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Error from '../Components/Error/Error';
-import MainLoader from '../Components/LoadMoreBtn/Button';
+import Loader from '../Components/Loader/Loader';
 import Button from '../Components/LoadMoreBtn/Button';
 import MoviesList from '../Components/MoviesList/MoviesList';
 import { fetchMoviesPage } from '../services/fetchFilms';
@@ -100,7 +100,7 @@ class MoviesPage extends Component {
             {shouldRenderLoadMoreBtn && <Button onClick={this.fetchMovies} />}
           </>
         )}
-        {isLoading && <MainLoader />}
+        {isLoading && <Loader />}
       </>
     );
   }
